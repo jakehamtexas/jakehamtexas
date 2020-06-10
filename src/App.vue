@@ -1,11 +1,17 @@
 <template>
   <div id="q-app">
-    <router-view />
+    <router-view class="site" />
   </div>
 </template>
 
-<script >
+<script>
 export default {
-  name: 'App'
-}
+  name: "App"
+};
 </script>
+
+<style lang="scss">
+.site {
+  padding: 20px;
+}
+</style>

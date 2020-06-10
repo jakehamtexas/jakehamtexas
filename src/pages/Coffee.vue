@@ -1,11 +1,11 @@
 <template>
   <q-page class="flex flex-center">
-    <h1>Here is the me page.</h1>
+    <h1>Buy me a coffee!</h1>
   </q-page>
 </template>
 
 <script>
 export default {
-  name: "PageIndex"
+  name: "Coffee"
 };
 </script>

@@ -1,109 +1,97 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lHh Lpr lFf" class="bg-primary text-white" height-hint="98">
+    <q-header elevated class="text-secondary">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
-
         <q-toolbar-title>
-          Quasar App
+          Jake Hamilton
+          <q-avatar v-for="social of socials" :key="social.key">
+            <a
+              :href="social.href"
+              :title="social.title"
+              class="text-accent"
+              v-html="social.iconMarkup"
+              target="blank"
+            ></a>
+          </q-avatar>
+          <q-avatar
+            dense
+            flat
+            round
+            icon="menu"
+            @click="hasHamburgerClicked = !hasHamburgerClicked"
+            class="float-right text-secondary"
+            v-if="hasHamburger"
+            font-size="30px"
+          />
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
+      <q-tabs align="left" v-if="!hasHamburger">
+        <q-route-tab
+          v-for="route of routes"
+          ref="desktopTabs"
+          :key="route.key"
+          :to="route.to"
+          :label="route.label(false)"
+          class="text-accent"
         />
+      </q-tabs>
+    </q-header>
+    <q-drawer
+      show-if-above
+      v-model="hasHamburgerClicked"
+      side="right"
+      bordered
+      content-class="bg-primary"
+      v-if="hasHamburger"
+    >
+      <q-list style="width: 100%;" dark bordered separator>
+        <q-item
+          v-for="route of routes"
+          :key="route.key"
+          :to="route.to"
+          class="text-accent float-left text-secondary hamburger-item"
+          clickable
+          v-ripple
+          @click="hasHamburgerClicked = false"
+          ><a
+            :style="drawerButtonClass"
+            :href="route.to"
+            class="text-secondary"
+            style="width: 100%; text-decoration:none"
+            ><q-item-section>{{ route.label(true) }}</q-item-section></a
+          ></q-item
+        >
+        <q-item
+          :key="'empty'"
+          class="text-accent float-left text-secondary hamburger-item"
+        ></q-item>
       </q-list>
     </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
-
 <script>
-import EssentialLink from 'components/EssentialLink'
-
+import { socials, routes } from "../constants";
+import {
+  WindowDimensionsMixin,
+  HasHamburgerMixin,
+  DrawerButtonClassMixin
+} from "../mixins";
 export default {
-  name: 'MainLayout',
-
-  components: {
-    EssentialLink
-  },
-
-  data () {
-    return {
-      leftDrawerOpen: false,
-      essentialLinks: [
-        {
-          title: 'Docs',
-          caption: 'quasar.dev',
-          icon: 'school',
-          link: 'https://quasar.dev'
-        },
-        {
-          title: 'Github',
-          caption: 'github.com/quasarframework',
-          icon: 'code',
-          link: 'https://github.com/quasarframework'
-        },
-        {
-          title: 'Discord Chat Channel',
-          caption: 'chat.quasar.dev',
-          icon: 'chat',
-          link: 'https://chat.quasar.dev'
-        },
-        {
-          title: 'Forum',
-          caption: 'forum.quasar.dev',
-          icon: 'record_voice_over',
-          link: 'https://forum.quasar.dev'
-        },
-        {
-          title: 'Twitter',
-          caption: '@quasarframework',
-          icon: 'rss_feed',
-          link: 'https://twitter.quasar.dev'
-        },
-        {
-          title: 'Facebook',
-          caption: '@QuasarFramework',
-          icon: 'public',
-          link: 'https://facebook.quasar.dev'
-        },
-        {
-          title: 'Quasar Awesome',
-          caption: 'Community Quasar projects',
-          icon: 'favorite',
-          link: 'https://awesome.quasar.dev'
-        }
-      ]
-    }
-  }
-}
+  name: "MainLayout",
+  mixins: [WindowDimensionsMixin, HasHamburgerMixin, DrawerButtonClassMixin],
+  data: () => ({
+    socials,
+    routes,
+    hasHamburgerClicked: false
+  })
+};
 </script>
+
+<style lang="scss">
+.hamburger-item {
+  width: 100%;
+}
+</style>
