@@ -1,13 +1,13 @@
+import { routes as Routes } from "../constants";
+
 const routes = [
   {
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
-    children: [
-      { path: "", component: () => import("pages/Index.vue") },
-      { path: "resume", component: () => import("pages/Resume.vue") },
-      { path: "projects", component: () => import("pages/Projects.vue") },
-      { path: "coffee", component: () => import("pages/Coffee.vue") }
-    ]
+    children: Routes.map(({ path, component }) => ({
+      path,
+      component
+    }))
   }
 ];
 
