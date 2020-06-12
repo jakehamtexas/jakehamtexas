@@ -1,4 +1,4 @@
-import getKey from "src/getKey";
+import { getKey } from "src/getKey";
 
 export const routes = [
   {

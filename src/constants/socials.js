@@ -1,4 +1,4 @@
-import getKey from "../getKey";
+import { getKey } from "../getKey";
 
 export const socials = [
   {
