@@ -1,7 +1,7 @@
 {
   "name": "jakeh",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
+  "description": "Jake Hamilton's Personal Website",
   "productName": "Jake Hamilton",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
