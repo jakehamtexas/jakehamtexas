@@ -77,16 +77,27 @@ import { socials, routes } from "../constants";
 import {
   WindowDimensionsMixin,
   HasHamburgerMixin,
+  ScreenIsSmallerThanTabsWidthMixin,
+  IsMobileMixin,
   DrawerButtonClassMixin
 } from "../mixins";
 export default {
   name: "MainLayout",
-  mixins: [WindowDimensionsMixin, HasHamburgerMixin, DrawerButtonClassMixin],
+  mixins: [
+    WindowDimensionsMixin,
+    HasHamburgerMixin,
+    DrawerButtonClassMixin,
+    ScreenIsSmallerThanTabsWidthMixin,
+    IsMobileMixin
+  ],
   data: () => ({
     socials,
     routes,
     hasHamburgerClicked: false
-  })
+  }),
+  mounted() {
+    console.log(this.$q.platform);
+  }
 };
 </script>
 
