@@ -19,7 +19,7 @@
             round
             icon="menu"
             @click="hasHamburgerClicked = !hasHamburgerClicked"
-            class="float-right text-secondary"
+            class="float-right text-accent"
             v-if="hasHamburger"
             font-size="30px"
           />
@@ -56,7 +56,7 @@
           ><a
             :style="drawerButtonClass"
             :href="route.to"
-            class="text-secondary"
+            class="text-accent"
             style="width: 100%; text-decoration:none"
             ><q-item-section>{{ route.label(true) }}</q-item-section></a
           ></q-item
