@@ -2,7 +2,7 @@
   <div class="personal-info">
     <div class="title">
       <h2>Jake Hamilton</h2>
-      <span class="subtitle">.NET Software Developer</span>
+      <span class="subtitle">Full Stack Software Developer</span>
     </div>
     <table class="contact-info">
       <tr class v-for="contactField of contactFields" :key="contactField.key">
@@ -46,7 +46,7 @@ const contactFields = [
 ].map(toComplex);
 
 const objective =
-  "Enthusiastic software engineer with exceptional skills in front-end engineering eager to contribute to an established organization. Infectious attitude of hard work, continuous self-improvement, and attention to detail. Love for all things JS and front-end.";
+  "Enthusiastic full-stack software engineer with exceptional skills in front-end engineering eager to contribute to an established organization. Infectious attitude of hard work, continuous self-improvement, and attention to detail. Insatiable desire to learn and grow alongside like-minded people.";
 
 export default {
   data: () => ({
