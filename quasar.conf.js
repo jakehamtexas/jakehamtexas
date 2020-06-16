@@ -7,6 +7,8 @@
 // https://quasar.dev/quasar-cli/quasar-conf-js
 /* eslint-env node */
 
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
 module.exports = function(/* ctx */) {
   return {
     // app boot file (/src/boot)
@@ -83,6 +85,11 @@ module.exports = function(/* ctx */) {
           }
         });
         cfg.plugins.push(require("./webpack/plugins/SiteMapPlugin.js").default);
+        cfg.plugins.push(
+          new CopyWebpackPlugin({
+            patterns: [{ from: "./seo/bing/BingSiteAuth.xml", to: "" }]
+          })
+        );
       }
     },
 
