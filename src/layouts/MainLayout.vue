@@ -94,10 +94,7 @@ export default {
     socials,
     routes,
     hasHamburgerClicked: false
-  }),
-  mounted() {
-    console.log(this.$q.platform);
-  }
+  })
 };
 </script>
 
