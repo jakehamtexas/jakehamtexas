@@ -11,7 +11,7 @@ const technologies = [
   ".NET Core",
   "Vue.js",
   "Node.js",
-  "Flutter",
+  "Flutter/Dart",
   "Azure DevOps",
   "Microsoft Azure Cloud Platform",
   "MSSQL Server",
@@ -21,7 +21,10 @@ const technologies = [
   "Git",
   "Redis",
   "Cosmos",
-  "Entity Framework Core"
+  "Entity Framework Core",
+  "Webpack",
+  "Express",
+  "Rust 🦀"
 ].map(toLabel);
 export default {
   components: {

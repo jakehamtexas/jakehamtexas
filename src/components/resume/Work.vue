@@ -21,7 +21,9 @@ const workHistories = [
     notes: [
       "Wrote .NET and Node.js supported Vue.js and Razor web applications implemented with IDesign architecture",
       "Developed both focused and generic reusable frontend components that saw unilateral adoption from every web team",
-      "Lead multiple successful projects within my team and advocated best practices with regard to design, time-management, and code correctness"
+      "Advocated best practices with regard to design, time-management, and code correctness",
+      `Lead development effort in frontend and wrote entire backend for an administrative subscription product that created $60, 000 dollars of annual revenue at inception, with widespread client acclaim`,
+      "Lead service bus architecture implementation and domain service refactoring which increased modularity and agility for service provisioning and scaling"
     ].map(toLabel)
   },
   {
