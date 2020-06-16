@@ -1,11 +1,22 @@
 <template>
   <q-page class="flex flex-center me">
     <div class="its-me-wrapper">
-      <h4>Hi!</h4>
+      <h4>Hi! 👋</h4>
       <h4>I'm Jake Hamilton.</h4>
-      <h4>Here's my website.</h4>
+      <h4>
+        I'm a super-motivated software developer based in West TX. I love
+        writing frontend for the web in Vue.js, creating cool projects with my
+        friends, and finding the next thing to learn or think about. I dabble in
+        a little bit of everything - Rust, Flutter/Dart, .NET Core,
+        Typescript/Node, the list goes on.
+      </h4>
+      <h4>
+        I have some cats and some kids, I get to write code all the time for
+        fun, and my wife is literally a chef, so life's pretty good.
+      </h4>
+      <h4>I have my social links in the top-nav, next to my name.</h4>
+      <h4>☝</h4>
       <h4>{{ navigationInstructionText }}</h4>
-      <h4>The links below will also work.</h4>
     </div>
     <div class="routes-wrapper">
       <router-link
@@ -46,7 +57,7 @@ export default {
       const mobileAwareContextualDirection = this.hasHamburger
         ? "hamburger menu in the top-right"
         : "buttons above";
-      return `You can use the ${mobileAwareContextualDirection} to check out some content.`;
+      return `You can also use the ${mobileAwareContextualDirection} or the links below to check out some content.`;
     }
   }
 };
@@ -54,10 +65,9 @@ export default {
 
 <style lang="scss" scoped>
 .me {
-  display: flex;
+  display: inline;
   .its-me-wrapper {
     width: 100%;
-    height: 100%;
     h4 {
       margin: 0;
       padding-bottom: 30px;
