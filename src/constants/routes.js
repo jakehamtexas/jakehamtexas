@@ -1,24 +1,15 @@
-import { getKey } from "src/getKey";
+import { getKey } from "../getKey";
+const { sitemapRoutes } = require("./sitemapRoutes");
 
-export const routes = [
-  {
-    to: "/",
-    label: _isHamburger => "Me",
-    key: getKey()
-  },
-  {
-    to: "/resume",
-    label: _isHamburger => "Resume",
-    key: getKey()
-  },
-  {
-    to: "/projects",
-    label: _isHamburger => "Projects",
-    key: getKey()
-  },
-  {
-    to: "/coffee",
-    label: isHamburger => (isHamburger ? "Coffee" : "Buy Me A Coffee"),
-    key: getKey()
-  }
-];
+const getLabelFunc = names => {
+  const [shortName, longName] = names;
+  return isHamburgerLabel =>
+    isHamburgerLabel ? shortName : longName || shortName;
+};
+
+export const routes = sitemapRoutes.map(sitemapRoute => ({
+  key: getKey(),
+  label: getLabelFunc(sitemapRoute.names),
+  to: sitemapRoute.path,
+  ...sitemapRoute
+}));
