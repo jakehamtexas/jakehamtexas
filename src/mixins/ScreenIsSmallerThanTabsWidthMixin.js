@@ -13,11 +13,15 @@ export const ScreenIsSmallerThanTabsWidthMixin = {
   },
   methods: {
     setScreenIsSmallerThanTabsWidth() {
-      const qTabsWidth = this.$refs.desktopTabs.reduce(
-        (clientWidths, { $el: { clientWidth } }) => clientWidth + clientWidths,
-        0
-      );
-      this.screenIsSmallerThanTabsWidth = qTabsWidth >= this.windowWidth;
+      const tabs = this.$refs.desktopTabs;
+      if (tabs) {
+        const qTabsWidth = tabs.reduce(
+          (clientWidths, { $el: { clientWidth } }) =>
+            clientWidth + clientWidths,
+          0
+        );
+        this.screenIsSmallerThanTabsWidth = qTabsWidth >= this.windowWidth;
+      }
     }
   }
 };
