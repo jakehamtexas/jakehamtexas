@@ -24,7 +24,8 @@ const technologies = [
   "Entity Framework Core",
   "Webpack",
   "Express",
-  "Rust 🦀"
+  "Rust 🦀",
+  "SCSS"
 ].map(toLabel);
 export default {
   components: {
