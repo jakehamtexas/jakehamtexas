@@ -29,19 +29,19 @@ exports.sitemapRoutes = [
     lastmod: getW3FormattedShortDateString(websiteSeoStartDate),
     priority: 0.9,
     changefreq: CHANGE_FREQ.monthly
-  },
-  {
-    path: "/projects",
-    names: ["Projects"],
-    lastmod: getW3FormattedShortDateString(websiteSeoStartDate),
-    priority: 0.9,
-    changefreq: CHANGE_FREQ.daily
-  },
-  {
-    path: "/coffee",
-    names: ["Coffee", "Buy Me A Coffee"],
-    lastmod: getW3FormattedShortDateString(websiteSeoStartDate),
-    priority: 0.5,
-    changefreq: CHANGE_FREQ.never
   }
+  // {
+  //   path: "/projects",
+  //   names: ["Projects"],
+  //   lastmod: getW3FormattedShortDateString(websiteSeoStartDate),
+  //   priority: 0.9,
+  //   changefreq: CHANGE_FREQ.daily
+  // }
+  // {
+  //   path: "/coffee",
+  //   names: ["Coffee", "Buy Me A Coffee"],
+  //   lastmod: getW3FormattedShortDateString(websiteSeoStartDate),
+  //   priority: 0.5,
+  //   changefreq: CHANGE_FREQ.never
+  // }
 ];
