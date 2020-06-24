@@ -1,8 +1,8 @@
 <template>
-  <q-page class="flex flex-center resume">
+  <q-page class="flex flex-center resume" id="resume">
     <personal-info />
     <work />
-    <skills />
+    <skills class="skills" />
     <technologies />
     <education />
   </q-page>
@@ -14,7 +14,8 @@ import {
   Work,
   Technologies,
   Education,
-  Skills
+  Skills,
+  DownloadButton
 } from "components/resume";
 export default {
   name: "Resume",

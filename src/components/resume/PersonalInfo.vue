@@ -1,18 +1,25 @@
 <template>
   <div class="personal-info">
     <div class="title">
-      <h2>Jake Hamilton</h2>
+      <div class="download-btn__wrapper">
+        <span class="name">Jake Hamilton</span>
+        <download-button v-if="!isMobile" />
+      </div>
       <span class="subtitle">Full Stack Software Developer</span>
     </div>
     <table class="contact-info">
       <tr class v-for="contactField of contactFields" :key="contactField.key">
-        <td class="bold">{{ contactField.name }}:</td>
+        <td class="bold">
+          <span>{{ contactField.name }}:</span>
+        </td>
         <td>
           <a
             v-if="contactField.isTel || contactField.isEmail"
             :href="getHref(contactField)"
           >
-            {{ contactField.value }}
+            <span>
+              {{ contactField.value }}
+            </span>
           </a>
           <span v-else>
             {{ contactField.value }}
@@ -26,7 +33,9 @@
 </template>
 
 <script>
+import DownloadButton from "./DownloadButton";
 import { toLabel, toComplex } from "../../getKey";
+import { IsMobileMixin } from "../../mixins";
 
 const contactFields = [
   {
@@ -49,6 +58,10 @@ const objective =
   "Enthusiastic full-stack software engineer with exceptional skills in front-end engineering eager to contribute to an established organization. Infectious attitude of hard work, continuous self-improvement, and attention to detail. Insatiable desire to learn and grow alongside like-minded people.";
 
 export default {
+  components: {
+    DownloadButton
+  },
+  mixins: [IsMobileMixin],
   data: () => ({
     contactFields,
     objective
@@ -70,11 +83,17 @@ export default {
 .personal-info {
   margin-bottom: 10px;
   width: 100%;
-  h2 {
-    margin: 10px 0 10px 0;
-  }
   .title {
     margin-bottom: 10px;
+    .download-btn__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .name {
+        margin: 10px 0 10px 0;
+        font-size: 3.75rem;
+      }
+    }
   }
   .contact-info {
     padding: 10px 0 10px 0;

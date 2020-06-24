@@ -8,7 +8,7 @@
 import { toLabel } from "../../getKey";
 import { ResumeArea, SimpleList } from "./private";
 const technologies = [
-  ".NET Core",
+  "`.NET Core",
   "Vue.js",
   "Node.js",
   "Flutter/Dart",
