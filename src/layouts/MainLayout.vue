@@ -68,7 +68,7 @@
       </q-list>
     </q-drawer>
     <q-page-container>
-      <router-view />
+      <router-view data-view />
     </q-page-container>
   </q-layout>
 </template>

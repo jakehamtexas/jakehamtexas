@@ -8,6 +8,7 @@
 /* eslint-env node */
 
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
 
 module.exports = function(/* ctx */) {
   return {
@@ -89,6 +90,9 @@ module.exports = function(/* ctx */) {
           new CopyWebpackPlugin({
             patterns: [{ from: "./seo/bing/BingSiteAuth.xml", to: "" }]
           })
+        );
+        cfg.plugins.push(
+          require("./webpack/plugins/PrerenderSPAPlugin.js").default
         );
       }
     },
