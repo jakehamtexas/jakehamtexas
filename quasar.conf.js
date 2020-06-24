@@ -90,6 +90,9 @@ module.exports = function(/* ctx */) {
             patterns: [{ from: "./seo/bing/BingSiteAuth.xml", to: "" }]
           })
         );
+        cfg.plugins.push(
+          require("./webpack/plugins/PrerenderSPAPlugin.js").default
+        );
       }
     },
 

@@ -1,7 +1,9 @@
+const { join } = require("path");
+
 const { sitemapRoutes } = require("../../src/constants/sitemapRoutes");
 const Plugin = require("prerender-spa-plugin");
 
 exports.default = new Plugin({
-  staticDir: path.join(__dirname, "dist"),
-  routes: sitemapRoutes.map(({ to }) => to)
+  staticDir: join(__dirname, "../../dist/spa"),
+  routes: sitemapRoutes.map(({ path }) => path)
 });
