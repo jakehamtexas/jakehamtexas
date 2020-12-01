@@ -8,12 +8,11 @@ import { toLabel } from "../../getKey";
 import { ResumeArea, SimpleList } from "./private";
 const skills = [
   "OOP",
-  "IDesign",
-  "Microservice Architecture",
+  "Eventbus Microservice Architecture",
   "Jira",
   "Sprint Planning",
   "Domain Refactoring",
-  "Large Projects"
+  "Mentorship"
 ].map(toLabel);
 export default {
   components: {
