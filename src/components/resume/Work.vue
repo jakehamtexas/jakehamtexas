@@ -24,8 +24,11 @@ const workHistories = [
     headline: "Test/Software Engineer",
     dates: "Jul 2020 - Current",
     notes: [
-      "Used Gitlab CI and Docker daily to create fast and robust CI solutions for large scale domain services",
-      "Rapidly modernized existing testing clients with Typescript and enforced coding standards with linting/formatting tooling",
+      "Used Gitlab CI, with multi-project and scheduled pipelines, alongside Docker to create fast and robust CI solutions for large scale domain services",
+      "Wrote custom static analysis tool for checking security configurations",
+      "Rapidly modernized existing testing clients with Typescript, functional programming and OOP design patterns, linting/formatting enforcement with husky/prettier/eslint",
+      "Prototyped an extensible finite-state-machine-based performance profiling test client",
+      "Added custom tooling to and extended test cases for Cypress-based UI test client",
       "Led an iOS client application rewrite that brought ease of use and powerful features to company adjusters",
       "Mentored junior developers in and outside work, and offered constructive feedback for peers in code review"
     ]
@@ -37,7 +40,6 @@ const workHistories = [
     notes: [
       "Wrote .NET and Node.js supported Vue.js and Razor web applications",
       "Developed both focused and generic reusable frontend components that saw unilateral adoption from every web team",
-      "Advocated best practices with regard to design, time-management, and code correctness",
       `Lead development effort in frontend and wrote entire backend for an administrative subscription product that created $60,000 dollars of annual revenue at inception, with widespread client acclaim`,
       "Lead service bus architecture implementation and domain service refactoring which increased modularity and agility for service provisioning and scaling"
     ]

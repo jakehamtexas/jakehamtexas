@@ -27,6 +27,8 @@ const technologies = [
   "Cosmos",
   "Entity Framework Core",
   "Webpack",
+  "Cypress",
+  "Mocha/Chai",
   "Express",
   "Rust 🦀",
   "SCSS"

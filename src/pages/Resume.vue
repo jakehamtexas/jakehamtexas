@@ -4,7 +4,7 @@
     <work class="work" />
     <skills class="skills" />
     <technologies />
-    <education />
+    <education class="education" />
   </q-page>
 </template>
 <script>

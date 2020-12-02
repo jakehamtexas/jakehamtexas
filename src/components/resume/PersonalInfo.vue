@@ -5,7 +5,7 @@
         <span class="name">Jake Hamilton</span>
         <download-button v-if="!isMobile" />
       </div>
-      <span class="subtitle">Full Stack Software Developer</span>
+      <span class="subtitle">Full-Stack Software Developer</span>
     </div>
     <table class="contact-info">
       <tr class v-for="contactField of contactFields" :key="contactField.key">

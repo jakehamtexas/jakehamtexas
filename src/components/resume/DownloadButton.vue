@@ -36,7 +36,9 @@ const getPrintableElementWithPrintableState = color => {
   const [_, __, booksInDemandWorkHistoryDiv] = Array.from(
     workHistory.getElementsByClassName("body-info-group")
   );
-  booksInDemandWorkHistoryDiv.style.marginTop = "125px";
+  booksInDemandWorkHistoryDiv.style.marginTop = "100px";
+  const education = getFirstWithClassName("education");
+  education.style.marginTop = "50px";
   return printableEl;
 };
 
