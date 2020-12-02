@@ -30,10 +30,13 @@ const getPrintableElementWithPrintableState = color => {
     const [first] = Array.from(printableEl.getElementsByClassName(className));
     return first;
   };
-  const skillsEl = getFirstWithClassName("skills");
-  skillsEl.style.marginTop = "75px";
   const downloadButtonEl = getFirstWithClassName("download-btn");
   downloadButtonEl.style.display = "none";
+  const workHistory = getFirstWithClassName("work");
+  const [_, __, booksInDemandWorkHistoryDiv] = Array.from(
+    workHistory.getElementsByClassName("body-info-group")
+  );
+  booksInDemandWorkHistoryDiv.style.marginTop = "125px";
   return printableEl;
 };
 

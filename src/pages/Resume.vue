@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center resume" id="resume">
     <personal-info />
-    <work />
+    <work class="work" />
     <skills class="skills" />
     <technologies />
     <education />

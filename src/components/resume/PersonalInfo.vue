@@ -55,7 +55,7 @@ const contactFields = [
 ].map(toComplex);
 
 const objective =
-  "Enthusiastic full-stack software engineer with exceptional skills in front-end engineering eager to contribute to an established organization. Infectious attitude of hard work, continuous self-improvement, and attention to detail. Insatiable desire to learn and grow alongside like-minded people.";
+  "Enthusiastic full-stack software engineer with exceptional skills in front-end engineering eager to contribute to an established organization. Infectious attitude of hard work, continuous self-improvement, and attention to detail. Insatiable desire to learn and grow alongside like-minded craftspeople.";
 
 export default {
   components: {

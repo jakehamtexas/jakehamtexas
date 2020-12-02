@@ -12,32 +12,49 @@
 import { ResumeArea, ResumeBodyInfoGroup } from "./private";
 import { toComplex, toLabel } from "../../getKey";
 
+const toWorkHistory = workHistory => ({
+  ...workHistory,
+  subtitle: "Lubbock, TX",
+  notes: workHistory.notes.map(toLabel)
+});
+
 const workHistories = [
+  {
+    title: "ARMtech Insurance Services",
+    headline: "Test/Software Engineer",
+    dates: "Jul 2020 - Current",
+    notes: [
+      "Used Gitlab CI and Docker daily to create fast and robust CI solutions for large scale domain services",
+      "Rapidly modernized existing testing clients with Typescript and enforced coding standards with linting/formatting tooling",
+      "Led an iOS client application rewrite that brought ease of use and powerful features to company adjusters",
+      "Mentored junior developers in and outside work, and offered constructive feedback for peers in code review"
+    ]
+  },
   {
     title: "SitePro",
     headline: ".NET Software Developer",
-    dates: "Apr 2019 - Current",
-    subtitle: "Lubbock, TX",
+    dates: "Apr 2019 - Jul 2020",
     notes: [
-      "Wrote .NET and Node.js supported Vue.js and Razor web applications implemented with IDesign architecture",
+      "Wrote .NET and Node.js supported Vue.js and Razor web applications",
       "Developed both focused and generic reusable frontend components that saw unilateral adoption from every web team",
       "Advocated best practices with regard to design, time-management, and code correctness",
-      `Lead development effort in frontend and wrote entire backend for an administrative subscription product that created $60, 000 dollars of annual revenue at inception, with widespread client acclaim`,
+      `Lead development effort in frontend and wrote entire backend for an administrative subscription product that created $60,000 dollars of annual revenue at inception, with widespread client acclaim`,
       "Lead service bus architecture implementation and domain service refactoring which increased modularity and agility for service provisioning and scaling"
-    ].map(toLabel)
+    ]
   },
   {
     title: "Books In Demand",
     headline: "Software Developer",
     dates: "Oct 2018 - Apr 2019",
-    subtitle: "Lubbock, TX",
     notes: [
       "Sole developer for end-to-end business solutions, including inventory reconciliation, web-scraping, and product valuation",
       "Implemented inventory loss prevention techniques that isolated up to $50,000 in stranded inventory monthly",
       "Technologies used: Entity Framework, C#/VB .NET, xUnit Test Framework, PhantomJS/CasperJS, MySQL, SQLite"
-    ].map(toLabel)
+    ]
   }
-].map(toComplex);
+]
+  .map(toWorkHistory)
+  .map(toComplex);
 
 export default {
   components: {

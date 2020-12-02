@@ -7,18 +7,22 @@
 <script>
 import { toLabel } from "../../getKey";
 import { ResumeArea, SimpleList } from "./private";
+
+const specialDotUnicode = 2024;
+const dotNetCore =
+  String.fromCharCode(parseInt(specialDotUnicode, 16)) + "NET Core";
 const technologies = [
-  "`.NET Core",
+  dotNetCore,
   "Vue.js",
   "Node.js",
   "Flutter/Dart",
-  "Azure DevOps",
   "Microsoft Azure Cloud Platform",
   "MSSQL Server",
   "Typescript",
   "ES6",
   "Docker",
   "Git",
+  "Linux VMs",
   "Redis",
   "Cosmos",
   "Entity Framework Core",
