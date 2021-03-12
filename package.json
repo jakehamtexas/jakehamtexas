@@ -16,7 +16,7 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "html2canvas": "^1.0.0-rc.5",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "prerender-spa-plugin": "^3.4.0",
     "quasar": "^1.0.0"
   },
